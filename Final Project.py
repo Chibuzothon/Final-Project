@@ -16,14 +16,15 @@ house_prices.describe()
 
 
 #looks at the colunms and rows in the table where the total bedrooms in the house is less than 9
-#saved that data into a df
+#saves that data into a df & displays df
 #house_prices[house_prices["Beds"]<9] table info (rows & coulums) where the beds is less than 9 
 df_house_price = house_prices[house_prices["Beds"]<9] 
-
+print(df_house_price)
 
 #used a histogram to plot the df 
-#histogram plots the beds column of the table 
+#histogram plots the Beds column of the table vs the number of hosues that have that number of beds
 plt.hist(df_house_price["Beds"]) #specifies the column to look at
+#displays histogram
 plt.show()
 
 
@@ -32,11 +33,14 @@ plt.show()
 df_prices_by_beds =df_house_price[["Beds","Price"]].groupby(["Beds"]).mean() 
 #puts index values into a column, because the bedroom count is an index in the df
 df_prices_by_beds["Bed_count"] = df_prices_by_beds.index 
+#shows the updated df 
+print(df_prices_by_beds)
 
 #plotted a bar graph for the bedroom count, (where bedroom is less than 9) vs the average price of the houses 
 plt.bar(x="Bed_count", height="Price", data = df_prices_by_beds)   
+#displays bar graph
 plt.show()
-print(df_prices_by_beds)
+
 
 
 
@@ -48,14 +52,14 @@ afro_spotify = pd.read_csv(afro_spotify_path)
 print(afro_spotify)
 
 
-#Regular expression & indexing to print out the row of data where "Boy" or "boy" shows up in the artist name
+#Regular expression & indexing to print out the rows of data where "Boy" or "boy" shows up in the artist name
 #/b == "word boundary"
 # [] only one option, lower or uppercase b
 #matches anything that has boy or Boy .* = matches anything
 artist_pattern = r".*[bB]oy\b" 
 
 Boy_artist_name = afro_spotify[afro_spotify["artist"].str.match(artist_pattern)]
-#Displays the columns and rows for the artists that have "Boy" in "boy" in their name
+#Displays the rows of data for the artists that have "Boy" in "boy" in their name
 print(Boy_artist_name)
 #returns the names of the artists that have "Boy" or "boy" in their name
 Boy_artist_name.artist.unique() 

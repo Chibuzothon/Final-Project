@@ -1,9 +1,10 @@
 # INST126 Final Project 
 ## House Prices Analysis 
-Histogram for number of bedrooms vs number of houses 
-*What Program Does:
+**Histogram for number of bedrooms vs number of houses** 
 
--Loads the path of a CSV file that has data on Houses in America. Then it reads the file and prints the data as a table.
+***What Program Does:***
+
++Loads the path of a CSV file that has data on Houses in America. Then it reads the file and prints the data as a table.
 
 -Then provides the statistical analysis of the values in each column of the table 
 
@@ -13,8 +14,9 @@ Then counts the number of houses that has bedrooms that are less than 9. Groups 
 -Histogram plots the beds column of the dataframe vs the the number of houses that have that number of bedrooms. Then displays histogram.
 
 
-Bar graph for number of bedrooms vs average price 
-*What Program Does:
+**Bar graph for number of bedrooms vs average price** 
+
+***What Program Does:***
 
 -Creates a dataframe that focuses on the houses where the total number of bedrooms that is less than 9.
 
@@ -30,7 +32,7 @@ Run as as a script at the command line
 
 
 ## Spotify Artist Analysis
-What Program Does:
+***What Program Does:***
 -Loads the path of a CSV file that has data on Afrobeat songs on Spotify. Then it reads the file and prints the data as table.
 
 -Uses a regular expression and indexing to print out the rows of data where the word "Boy" or "boy" shows up in the artist name.
@@ -40,5 +42,5 @@ What Program Does:
 -Then it returns just the names of all the artists that have "Boy" or "boy in their name.
 
 
-*How to use program:
+***How to use program:***
 Run as as a script at the command line

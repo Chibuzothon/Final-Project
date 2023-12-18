@@ -1,18 +1,8 @@
-#Final Project 
+#Final Project
+#Incorporate pandas & matplotlib, git and regular expressions 
 
-#don't worry about fundamentals focus on adavanced topics 
-#incoporate numpy/pandas/matplotlib
-#incorporate git
-#incorporate regular expressions
+#add what is required to readme, check class powerpoint & files
 
-
-#questions to ask
-#how to add git
-#adding regular expressions
-#ways I can incoporate numpy
-#add readme 
-# add license
-#question about getting an A+, do I completed the peer review & presented my code, do I need to complete more particpation?
 
 
 import pandas as pd
@@ -26,6 +16,8 @@ house_prices = pd.read_csv(house_prices_path)
 print(house_prices)
 house_prices.describe()
 
+#Looked at the colunms and rows in the table where the total beds in the house was less than 9
+#Then I saved that data into a table and used a histogram to plot the beds column of that table 
 df_house_price = house_prices[house_prices["Beds"]<9] #house_prices["Beds"] represents all the values in the column. 
 # house_prices[house_prices["Beds"]<9] table info where the beds is less than 9
 # house_prices["Beds"]<9 considers the Beds column, will return True for where the beds is less than 9
@@ -52,22 +44,18 @@ plt.plot("Living Space", "Price", data = house_prices)
 plt.show()
 
 
-#loaded the path of a csv file, read the file then printed the table
+#loaded the path of a csv file, read the file, & then printed the table
 afro_spotify_path = "C:/Users/Maryl/Downloads/INST126/spotifyafro.csv"
 afro_spotify = pd.read_csv(afro_spotify_path)
 print(afro_spotify)
 
 
-#Regular expression & indexing to print out the row of data were the artist has the name boy
+#Regular expression & indexing to print out the row of data where "boy" shows up in the artist name
 #\b == "word boundary"
-artist_pattern = r".*[bB]oy\b" #matches anything that has boy or Boy .* = matches anything
 # [] only one option, lower or uppercase b
-# df_afro_spotify = afro_spotify[afro_spotify["artist"]] 
-# print(df_afro_spotify)
-# df_afro_artist = afro_spotify["artist"] #acess the artist colunm within the afro spotify table
-# print(df_afro_artist) #prints out the names of all the artists in the table
+artist_pattern = r".*[bB]oy\b" #matches anything that has boy or Boy .* = matches anything
+
 Boy_artist_name = afro_spotify[afro_spotify["artist"].str.match(artist_pattern)] #column/series
 # afro_spotify.loc[(afro_spotify["artist"] == "Burna Boy")]
 print(Boy_artist_name)
-Boy_artist_name.artist.unique() #retunrs the naes of the artists that have boy in their name
-
+Boy_artist_name.artist.unique() #returns the names of the artists that have boy in their name

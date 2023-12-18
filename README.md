@@ -1,7 +1,7 @@
 # INST126 Final Project 
 ## House Prices Analysis 
 Histogram for number of bedrooms vs number of houses 
-What Program Does:
+*What Program Does:
 
 -Loads the path of a CSV file that has data on Houses in America. Then it reads the file and prints the data as a table.
 
@@ -14,7 +14,7 @@ Then counts the number of houses that has bedrooms that are less than 9. Groups 
 
 
 Bar graph for number of bedrooms vs average price 
-What Program Does:
+*What Program Does:
 
 -Creates a dataframe that focuses on the houses where the total number of bedrooms that is less than 9.
 

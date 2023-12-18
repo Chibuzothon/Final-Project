@@ -15,11 +15,11 @@ print(house_prices)
 house_prices.describe()
 
 
-#looked at the colunms and rows in the table where the total beds in the house is less than 9
-#counts the number of houses that has beds that are less than 9
+#looks at the colunms and rows in the table where the total bedrooms in the house is less than 9
 #saved that data into a df
-df_house_price = house_prices[house_prices["Beds"]<9] 
 #house_prices[house_prices["Beds"]<9] table info (rows & coulums) where the beds is less than 9 
+df_house_price = house_prices[house_prices["Beds"]<9] 
+
 
 #used a histogram to plot the df 
 #histogram plots the beds column of the table 
@@ -27,13 +27,13 @@ plt.hist(df_house_price["Beds"]) #specifies the column to look at
 plt.show()
 
 
-#created a df of the number of beds less than 9, and the price 
-#takes the average prices of the houses based on number of beds
+#created a df of the number of bedrooms that are less than 9, and the price 
+#takes the average prices of the houses based on number of bedrooms 
 df_prices_by_beds =df_house_price[["Beds","Price"]].groupby(["Beds"]).mean() 
-#values of index, put into a column. Because the beds count is an index in the df
+#puts index values into a column, because the bedroom count is an index in the df
 df_prices_by_beds["Bed_count"] = df_prices_by_beds.index 
 
-#plotted a bar graph for the bed count, (where rooms is less than 9) vs the average price of the houses 
+#plotted a bar graph for the bedroom count, (where bedroom is less than 9) vs the average price of the houses 
 plt.bar(x="Bed_count", height="Price", data = df_prices_by_beds)   
 plt.show()
 print(df_prices_by_beds)
@@ -59,4 +59,3 @@ Boy_artist_name = afro_spotify[afro_spotify["artist"].str.match(artist_pattern)]
 print(Boy_artist_name)
 #returns the names of the artists that have "Boy" or "boy" in their name
 Boy_artist_name.artist.unique() 
-print(afro_spotify["artist"])

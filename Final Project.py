@@ -18,7 +18,8 @@ print(house_prices)
 house_prices.describe()
 
 
-#looked at the colunms and rows in the table where the total beds in the house was less than 9
+#looked at the colunms and rows in the table where the total beds in the house is less than 9
+#counts the number of houses that has beds that are less than 9
 #saved that data into a df
 df_house_price = house_prices[house_prices["Beds"]<9] 
 #house_prices["Beds"] represents all the values in the column. 
@@ -57,4 +58,3 @@ Boy_artist_name = afro_spotify[afro_spotify["artist"].str.match(artist_pattern)]
 # afro_spotify.loc[(afro_spotify["artist"] == "Burna Boy")]
 print(Boy_artist_name)
 Boy_artist_name.artist.unique() #returns the names of the artists that have boy in their name
-#add one 
